@@ -44,9 +44,9 @@ jobs:
         run: npm ci
       - name: Run tests with coverage
         run: |
-          npm run test -- --ci
+          npm run test -- --ci || exit 1
           if [ ! -f coverage/coverage-summary.json ]; then
-            echo "Coverage file not found!"
+            echo "Coverage file not found! Make sure tests import src files."
             exit 1
           fi
           COVERAGE=$(grep -Po '"statements".*"pct":\K[0-9]+' coverage/coverage-summary.json)
