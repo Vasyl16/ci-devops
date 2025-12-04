@@ -25,7 +25,7 @@ jobs:
       - name: Run ESLint
         run: npm run lint
       - name: Upload lint report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lint-report
           path: lint-report.txt
@@ -55,7 +55,7 @@ jobs:
             echo "Coverage below 50%!"; exit 1
           fi
       - name: Upload coverage artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage
           path: |
@@ -78,7 +78,7 @@ jobs:
       - name: Build project
         run: npm run build
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist/
