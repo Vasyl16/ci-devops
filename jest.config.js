@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
   collectCoverage: true,
@@ -22,5 +22,5 @@ export default {
     '\\.(css|less|scss|sass)$': '<rootDir>/src/__mocks__/styleMock.js',
   },
   moduleFileExtensions: ['js', 'jsx', 'json'],
-  coverageProvider: 'babel',
+  coverageProvider: 'v8',
 };

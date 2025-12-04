@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext .js,.jsx --format json -o lint-report.txt || true",
-    "test": "jest --coverage --coverageDirectory=coverage --coverageReporters=json-summary,text,lcov"
+    "test": "jest"
   },
   "dependencies": {
     "react": "^18.2.0",
