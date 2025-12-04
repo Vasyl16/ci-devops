@@ -17,9 +17,11 @@ export default {
   transform: {
     '^.+\\.(js|jsx)$': 'babel-jest',
   },
+  moduleNameMapper: {
+    '\\.(css|less|scss|sass)$': '<rootDir>/src/__mocks__/styleMock.js',
+  },
   moduleFileExtensions: ['js', 'jsx', 'json'],
   collectCoverageFrom: ['src/**/*.{js,jsx}'],
   coveragePathIgnorePatterns: ['src/main.jsx', 'src/setupTests.js'],
   coverageProvider: 'babel',
-  all: true, // <- collect coverage for all files, even untested
 };
