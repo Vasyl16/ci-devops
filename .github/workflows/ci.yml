@@ -44,7 +44,7 @@ jobs:
         run: npm ci
       - name: Run tests with coverage
         run: |
-          npm run test -- --ci --coverage
+          npm run test -- --ci
           if [ ! -f coverage/coverage-summary.json ]; then
             echo "Coverage file not found!"
             exit 1
