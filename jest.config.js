@@ -1,23 +1,25 @@
 export default {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
-    '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
-  },
+  collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.{js,jsx}',
     '!src/main.jsx',
-    '!src/setupTests.js'
+    '!src/setupTests.js',
   ],
   coverageReporters: ['json-summary', 'text', 'lcov', 'junit'],
-  reporters: [
-    'default',
-    ['jest-junit', { outputFile: 'junit.xml' }]
-  ],
-  transform: {
-    '^.+\\.(js|jsx)$': 'babel-jest'
+  coverageThreshold: {
+    global: {
+      statements: 50,
+    },
   },
-  moduleFileExtensions: ['js', 'jsx', 'json']
-}
-
+  reporters: ['default', ['jest-junit', { outputFile: 'junit.xml' }]],
+  transform: {
+    '^.+\\.(js|jsx)$': 'babel-jest',
+  },
+  moduleFileExtensions: ['js', 'jsx', 'json'],
+  collectCoverageFrom: ['src/**/*.{js,jsx}'],
+  coveragePathIgnorePatterns: ['src/main.jsx', 'src/setupTests.js'],
+  coverageProvider: 'babel',
+  all: true, // <- collect coverage for all files, even untested
+};
